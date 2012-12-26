@@ -1,0 +1,326 @@
+ 
+ #contenaireMap{
+ 	
+ 	height: 100%;
+ 	width: 80%;
+ }
+ 
+ #map{
+ 	
+ 	height: 100%;
+ 	width: 80%;
+ }
+ 
+ #superposition {
+  position: relative;
+  text-align: center;
+  /*width: 80%;*/
+}
+/* L'ensemble des petites images est positionn� par rapport au div parent */
+.petite-image {
+ position: absolute;
+
+
+}
+/* Avec les id, on peut jongler avec le positionnement pr�cis de chaque image */
+#petite-image-1 {
+ width: 100%;
+  top: 32%;
+  text-align: center;
+}
+#petite-image-2 {
+  top: 32%;
+  left: 0;
+ text-align: center
+  
+}
+#petite-image-3 {
+  bottom: 0;
+  left: 0;
+  
+}
+#contenu{
+	 width: 100%;
+	  text-align:center; 
+	  height: 30%; 
+	   
+ } 
+.img{
+		width: 18%;
+}
+
+a.bouton:link{
+  width:150px; 
+  height:30px; 
+  text-decoration:none; 
+  color:black;
+  text-align:center; 
+  background-color:#FFFFFF;
+  box-shadow: 10px 10px 5px #656565;
+  padding:5px
+}
+a.bouton:visited{
+  width:150px; 
+  height:30px;
+  text-decoration:none; 
+  color:black; 
+  text-align:center;
+  font-weight:bold;
+  background-color:#FFFFFF;
+  box-shadow: 10px 10px 5px #656565;
+  padding:5px
+}
+a.bouton:hover{
+  width:150px;
+  height:30px;
+  text-decoration:none;
+  color:black;
+  text-align:center;
+  font-weight:bold;
+  background-color:#FFFFFF;
+  -o-box-shadow: 10px 10px 5px #656565;
+  box-shadow: 2% 2% 1% #656565;
+  padding:5px;
+  border-style:outset;
+  border-width:2px;
+  border-color:silver
+}
+.bouton{
+  text-align:center;
+  padding:5px;
+}
+
+#menu ul, #menu ol{
+
+	list-style-type:none;
+    
+}
+#menu a{ /* cible les liens uniquement de la div menu */
+	
+    text-decoration:none; /* supprime le soulignement */
+    
+    color:black; /* supprime la couleiur bleue au profit
+     de la noire */
+    
+    display:block; /* cela transforme les �l�ments <a>
+    		 en �l�ments block pour pouvoir 
+             les dimensionner */
+    
+    width: 100px;
+    
+    height: 40px;
+    
+    line-height: 40px; /* permet de centrer 
+    		verticalement le texte */
+    
+    text-align:center; /* centre le texte 
+    			horizontalement */
+    
+    background-color: #CCC;
+}
+#menu ul li{ /* cible les LI des UL uniquement */
+
+	float:left;
+    
+    margin: 10px;
+    
+    }
+
+#menu a:hover{
+	
+	background-color: #EEE;
+	
+	color: blue;
+	
+/* ceci est l'effet rollover */
+}
+	#menu, #menu ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	#menu {
+		width: 960px;
+		margin: 30px auto; /* 60px */
+		border: 1px solid #222;
+		background-color: #111;
+		background-image: -moz-linear-gradient(#444, #111); 
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111));	
+		background-image: -webkit-linear-gradient(#444, #111);	
+		background-image: -o-linear-gradient(#444, #111);
+		background-image: -ms-linear-gradient(#444, #111);
+		background-image: linear-gradient(#444, #111);
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		border-radius: 6px;
+		-moz-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
+		-webkit-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
+		box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
+	}
+	
+	#menu:before,
+	#menu:after {
+		content: "";
+		display: table;
+	}
+	
+	#menu:after {
+		clear: both;
+	}
+	
+	#menu {
+		zoom:1;
+	}
+	
+	#menu li {
+		float: left;
+		border-right: 1px solid #222;
+		-moz-box-shadow: 1px 0 0 #444;
+		-webkit-box-shadow: 1px 0 0 #444;
+		box-shadow: 1px 0 0 #444;
+		position: relative;
+	}
+	
+	#menu a {
+		float: left;
+		padding: 12px 30px;
+		color: #999;
+		text-transform: uppercase;
+		font: bold 12px Arial, Helvetica;
+		text-decoration: none;
+		text-shadow: 0 1px 0 #000;
+	}
+	
+	#menu li:hover > a {
+		color: #fafafa;
+	}
+	
+	*html #menu li a:hover { /* IE6 only */
+		color: #fafafa;
+	}
+	
+	#menu ul {
+		margin: 20px 0 0 0;
+		_margin: 0; /*IE6 only*/
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 39px;
+		left: 0;
+		z-index: 9999;    
+		background: #444;
+		background: -moz-linear-gradient(#444, #111);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111));
+		background: -webkit-linear-gradient(#444, #111);    
+		background: -o-linear-gradient(#444, #111);	
+		background: -ms-linear-gradient(#444, #111);	
+		background: linear-gradient(#444, #111);
+		-moz-box-shadow: 0 -1px rgba(255,255,255,.3);
+		-webkit-box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+		box-shadow: 0 -1px 0 rgba(255,255,255,.3);	
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		-webkit-transition: all .2s ease-in-out;
+		-moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+		-o-transition: all .2s ease-in-out;
+		transition: all .2s ease-in-out;  
+	}
+
+	#menu li:hover > ul {
+		opacity: 1;
+		visibility: visible;
+		margin: 0;
+	}
+	
+	#menu ul ul {
+		top: 0;
+		left: 150px;
+		margin: 0 0 0 20px;
+		_margin: 0; /*IE6 only*/
+		-moz-box-shadow: -1px 0 0 rgba(255,255,255,.3);
+		-webkit-box-shadow: -1px 0 0 rgba(255,255,255,.3);
+		box-shadow: -1px 0 0 rgba(255,255,255,.3);		
+	}
+	
+	#menu ul li {
+		float: none;
+		display: block;
+		border: 0;
+		_line-height: 0; /*IE6 only*/
+		-moz-box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+		-webkit-box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+		box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+	}
+	
+	#menu ul li:last-child {   
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;    
+	}
+	
+	#menu ul a {    
+		padding: 10px;
+		width: 130px;
+		_height: 10px; /*IE6 only*/
+		display: block;
+		white-space: nowrap;
+		float: none;
+		text-transform: none;
+		background: #54F98D;
+	}
+	
+	#menu ul a:hover {
+		background-color: #0186ba;
+		background-image: -moz-linear-gradient(#04acec,  #0186ba);	
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
+		background-image: -webkit-linear-gradient(#04acec, #0186ba);
+		background-image: -o-linear-gradient(#04acec, #0186ba);
+		background-image: -ms-linear-gradient(#04acec, #0186ba);
+		background-image: linear-gradient(#04acec, #0186ba);
+	}
+	
+	#menu ul li:first-child > a {
+		-moz-border-radius: 3px 3px 0 0;
+		-webkit-border-radius: 3px 3px 0 0;
+		border-radius: 3px 3px 0 0;
+	}
+	
+	#menu ul li:first-child > a:after {
+		content: '';
+		position: absolute;
+		left: 40px;
+		top: -6px;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-bottom: 6px solid #444;
+	}
+	
+	#menu ul ul li:first-child a:after {
+		left: -6px;
+		top: 50%;
+		margin-top: -6px;
+		border-left: 0;	
+		border-bottom: 6px solid transparent;
+		border-top: 6px solid transparent;
+		border-right: 6px solid #3b3b3b;
+	}
+	
+	#menu ul li:first-child a:hover:after {
+		border-bottom-color: #04acec; 
+	}
+	
+	#menu ul ul li:first-child a:hover:after {
+		border-right-color: #0299d3; 
+		border-bottom-color: transparent; 	
+	}
+	
+	#menu ul li:last-child > a {
+		-moz-border-radius: 0 0 3px 3px;
+		-webkit-border-radius: 0 0 3px 3px;
+		border-radius: 0 0 3px 3px;
+	}
+
+

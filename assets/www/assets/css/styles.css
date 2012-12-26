@@ -1,0 +1,28 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+html, body, #map {
+	height: 100%;
+}
+
+#pcom{
+
+position:absolute;
+right:0px;
+top:0px;
+z-index:3;
+
+
+}
+
+#notif_id{
+position:absolute;
+left:0px;
+bottom:0px;
+z-index:3;
+}
+
+#map{
+	z-index: 2;
+}
