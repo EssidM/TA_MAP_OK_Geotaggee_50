@@ -1,0 +1,67 @@
+<h3>Photo upload</h3>
+    
+    
+    <p>
+				<label>choisir le poi : </label>
+				<br>
+				<select id="main"></select>
+				<SCRIPT>
+					selectPoi();
+
+				</SCRIPT>
+				
+
+				</p>
+    <div>
+        <h3>Serveur:</h3>
+        <input id="serverUrl" type="text" value="http://10.0.2.3/upload.php" />
+    </div>
+    <br/>
+    <br/>
+
+	<!-- Camera -->
+	<div>
+		<h3>Camera:</h3>
+		<b>Status:</b> <span id="camera_status"></span><br>
+        <b>Image:</b> <img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />
+	</div>
+	
+	<br/>
+	<br/>
+        
+    <!-- Actions -->
+    <div>
+    	
+        <input type="button" onclick="takePicture();" value="prendre une photo" /><br/><br/>
+        
+        <input type="button" onclick="selectPicture();" value="Selectionner une photo de la galerie" /><br/><br/>
+        
+        <input type="text" id="com" placeholder="tapez votre commentaire"/><br/><br/>
+        
+        <p id="longitude"></p>
+        
+        <p id="latitude"></p>
+        
+        <p id="altitude"></p>
+        
+       
+        <script> onDeviceReady();</script>
+        
+       
+        
+        <input type="button" onclick="uploadPicture();" value="Upload photo" />
+    </div>
+    <br/><br/>
+    
+    <!-- Server pictures -->
+    <div>
+        <h3>Serveur:</h3>
+        <b>Images sur le serveur:</b>
+        <div id="server_images"></div>
+    </div>
+    <br/>
+
+    <!-- Actions -->
+    <div>
+        <input type="button" onclick="viewUploadedPictures();" value="photos uploaded" />
+    </div>

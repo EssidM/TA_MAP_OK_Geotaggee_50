@@ -1,0 +1,154 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>PhoneGap</title>
+    <style type="text/css">
+        div {border: 1px solid black;}
+        input {width: 100%;}
+    </style>
+    <script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery-1.7.2.min.js"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+      
+    var deviceReady = false;
+    var long;
+    var lati;
+    var alti;
+    
+     //document.addEventListener("deviceready", onDeviceReady, false);
+    //onDeviceReady();
+    
+    
+    
+    
+    
+    function selectPoi() {
+				
+				//var selectValuePoi = document.getElementById('poi').options[document.getElementById('poi').selectedIndex].value;
+				var ajax = new XMLHttpRequest();
+				ajax.open("POST", "http://10.0.2.3/wstourisme/index.php?methode=select&table=pointofinterest", true);
+				ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				//alert("cnx ok");
+				var content = "methode=select&table=pointofinterest";
+
+				//alert(content);
+
+				ajax.send(content);
+				
+
+				ajax.onreadystatechange = function() {
+
+					if (ajax.readyState == 4 && (ajax.status == 200 || ajax.status == 0)) {
+
+						alert(ajax.responseText);
+
+						var elt = ajax.responseText.split("{");
+						var chaineJson = "{";
+						for (var i = 1; i < elt.length - 1; i++) {
+							chaineJson = chaineJson + elt[i] + "{";
+						}
+						chaineJson = chaineJson + elt[elt.length - 1];
+						//alert(chaineJson);
+						eval('var data = ' + chaineJson + ';');
+						//alert("tt"+data);
+						var nodes = data.results;
+
+						var theHTML ='';
+						//var marketable=null;
+						for (var i = 0; i < nodes.length; i++) {
+						
+							
+							theHTML += ['<option value=' + nodes[i].idpoi + '>' + nodes[i].namepoi + '</option>'].join('');
+						
+						}
+						
+
+						document.getElementById('main').innerHTML = theHTML;
+
+					}
+				};
+
+			}
+    
+
+    
+    
+   
+    </script>
+
+  </head>
+  <body onload="init();">
+    <h3>Photo upload</h3>
+    
+    
+    <p>
+				<label>choisir le poi : </label>
+				<br>
+				<select id="main"></select>
+				<SCRIPT>
+					selectPoi();
+
+				</SCRIPT>
+				
+
+				</p>
+    <div>
+        <h3>Serveur:</h3>
+        <input id="serverUrl" type="text" value="http://10.0.2.3/upload.php" />
+    </div>
+    <br/>
+    <br/>
+
+	<!-- Camera -->
+	<div>
+		<h3>Camera:</h3>
+		<b>Status:</b> <span id="camera_status"></span><br>
+        <b>Image:</b> <img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />
+	</div>
+	
+	<br/>
+	<br/>
+        
+    <!-- Actions -->
+    <div>
+    	
+        <input type="button" onclick="takePicture();" value="prendre une photo" /><br/><br/>
+        
+        <input type="button" onclick="selectPicture();" value="Selectionner une photo de la galerie" /><br/><br/>
+        
+        <input type="text" id="com" placeholder="tapez votre commentaire"/><br/><br/>
+        
+        <p id="longitude"></p>
+        
+        <p id="latitude"></p>
+        
+        <p id="altitude"></p>
+        
+       
+        <script> onDeviceReady();</script>
+        
+       
+        
+        <input type="button" onclick="uploadPicture();" value="Upload photo" />
+    </div>
+    <br/><br/>
+    
+    <!-- Server pictures -->
+    <div>
+        <h3>Serveur:</h3>
+        <b>Images sur le serveur:</b>
+        <div id="server_images"></div>
+    </div>
+    <br/>
+
+    <!-- Actions -->
+    <div>
+        <input type="button" onclick="viewUploadedPictures();" value="photos uploaded" />
+    </div>
+    
+  </body>
+</html>
